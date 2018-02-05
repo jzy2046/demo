@@ -4,10 +4,12 @@ import com.example.demo.Service.UserService;
 import com.example.demo.dao.UserMapper;
 import com.example.demo.entity.User;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
