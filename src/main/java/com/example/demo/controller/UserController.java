@@ -15,16 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/user")
 public class UserController {
     @Resource
-    private UserService userService;
-    @Resource
     private SysUsersService sysUsersService;
-    @RequestMapping("/showUser")
-    @ResponseBody
-    public User toIndex(HttpServletRequest request){
-        int userId=Integer.parseInt(request.getParameter("id"));
-        User user=userService.getUserById(userId);
-        return user;
-    }
     @RequestMapping("/showSystemUser")
     @ResponseBody
     public SysUsers showSystemUser(HttpServletRequest request){
