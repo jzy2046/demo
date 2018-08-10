@@ -1,32 +1,39 @@
-package com.example.demo.Service.Impl;
+package com.example.demo.service.impl;
 
-import com.example.demo.Service.UserService;
-import com.example.demo.dao.UserMapper;
-import com.example.demo.entity.User;
+import com.example.demo.mapper.UserMapper;
+import com.example.demo.model.User;
+import com.example.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
-@Service
-@Transactional
+/**
+ * @author hzy13811
+ */
+@Service("userService")
 public class UserServiceImpl implements UserService {
-    @Resource
-    private UserMapper userMapper;
+
+    @Autowired
+    private UserMapper userDao;
+
+
     @Override
-    public User getUserById(Integer id) {
-        return userMapper.selectByPrimaryKey(id);
+    public User getUserById(int userId) {
+        return userDao.selectByPrimaryKey(userId);
     }
 
     @Override
-    public boolean addUser(User record) {
-        boolean result=false;
+    public boolean addUser(User record){
+        boolean result = false;
         try {
-            userMapper.insertSelective(record);
-            result=true;
-        }catch (Exception e){
+            userDao.insertSelective(record);
+            result = true;
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
         return result;
     }
+
 }

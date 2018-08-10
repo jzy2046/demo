@@ -1,9 +1,11 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 
-import com.example.demo.entity.User;
+
+import com.example.demo.model.User;
 
 public interface UserService {
-    public User getUserById(Integer userId);
+    public User getUserById(int userId);
 
-    public boolean addUser(User record);
+    boolean addUser(User record);
+
 }

@@ -5,8 +5,8 @@ spring:
 
 #公共配置与profiles选择无关
 mybatis:
-  typeAliasesPackage: com.example.demo.dao
-  mapperLocations: classpath*:com/example/demo/**/*Mapper.xml
+  typeAliasesPackage: com.example.demo.model
+  mapperLocations: classpath:mapper/*.xml
 
 
 ---
@@ -16,7 +16,7 @@ spring:
   profiles: dev
 
   datasource:
-    url: jdbc:mysql://192.168.1.11:3306/test?useUnicode=true&&characterEncoding=UTF-8
-    username: admin
-    password: admin1320
+    url: jdbc:mysql://127.0.0.7:3306/test
+    username: hzy123
+    password: a123456
     driver-class-name: com.mysql.jdbc.Driver
