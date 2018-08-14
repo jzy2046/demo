@@ -2,7 +2,7 @@
 
 JDK版本:
 
-      1.7
+      1.8
 版本0.01
 数据库环境:
 
@@ -21,4 +21,12 @@ JDK版本:
     user_name 类型:varchar
     password 类型:varchar
     age 类型:tinyint
-          
+    
+增加通用mapper查询:
+     可以使用 HQL语句
+     Example example=new Example(User.class);
+     Example.Criteria criteria = example.createCriteria();
+     criteria.andCondition("id is not",null);
+     List<User> users = userDao.selectByExample(example);
+增加lombok 不需要写实体类get set
+增加单元测试以及@Slf4j
