@@ -23,10 +23,12 @@ JDK版本:
     age 类型:tinyint
     
 增加通用mapper查询:
-     可以使用 HQL语句
+
+     `可以使用 HQL语句
      Example example=new Example(User.class);
      Example.Criteria criteria = example.createCriteria();
      criteria.andCondition("id is not",null);
-     List<User> users = userDao.selectByExample(example);
-增加lombok 不需要写实体类get set
+     List<User> users = userDao.selectByExample(example);`
+增加lombok: `不需要写实体类get set`
+
 增加单元测试以及@Slf4j

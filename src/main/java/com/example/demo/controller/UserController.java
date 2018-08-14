@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.example.demo.common.BaseResult;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import tk.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import java.util.List;
 @Controller
 @MapperScan("com.example.demo.mapper")
 @RequestMapping("/user")
+@Slf4j
 public class UserController {
     @Resource
     private UserService userService;
@@ -51,6 +53,7 @@ public class UserController {
     @ResponseBody
     public List<User> showAllUser(HttpServletRequest request){
         List<User> users = userService.selectTest();
+        log.info("into->{}",users);
         return users;
     }
 }
